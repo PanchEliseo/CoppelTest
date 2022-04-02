@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.coppeltest.R
 import com.example.coppeltest.data.SuperHeroForId
 import com.example.coppeltest.databinding.EpoxyItemHeroDetailBinding
 
@@ -45,6 +46,7 @@ class HeroAdapter(private val list: List<SuperHeroForId>): RecyclerView.Adapter<
     private fun downLoadImage(imgUrl: String, imgView: ImageView) {
         Glide.with(context)
             .load(imgUrl)
+            .placeholder(R.mipmap.ic_launcher)
             .centerCrop()
             .into(imgView)
     }

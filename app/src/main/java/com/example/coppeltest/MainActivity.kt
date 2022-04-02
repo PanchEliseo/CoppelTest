@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.coppeltest.ui.main.MainFragment
 import com.example.coppeltest.ui.main.SuperHeroViewModel
 import com.example.coppeltest.ui.main.WebViewActivity

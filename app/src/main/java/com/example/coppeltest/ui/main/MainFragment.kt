@@ -39,7 +39,7 @@ class MainFragment: Fragment() {
         binding.buttonSearch.setOnClickListener {
             if (binding.editTextId.text.isNotEmpty()) {
                 if ((requireActivity() as MainActivity).viewModel.checkForInternet(requireContext())) {
-                    if ((requireActivity() as MainActivity).viewModel.isdigit(binding.editTextId))
+                    if ((requireActivity() as MainActivity).viewModel.isDigit(binding.editTextId))
                         (requireActivity() as MainActivity).viewModel.getHero(binding.editTextId.text.toString())
                     else
                         (requireActivity() as MainActivity).viewModel.getHeroForSearch(binding.editTextId.text.toString())

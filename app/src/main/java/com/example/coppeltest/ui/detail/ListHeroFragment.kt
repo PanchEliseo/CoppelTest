@@ -1,22 +1,13 @@
 package com.example.coppeltest.ui.detail
 
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.coppeltest.FRAGMENT_TAG
-import com.example.coppeltest.MainActivity
-import com.example.coppeltest.R
 import com.example.coppeltest.data.SuperHeroForId
 import com.example.coppeltest.databinding.FragmentListHeroBinding
-import com.example.coppeltest.ui.main.MainFragment
-import com.example.coppeltest.ui.main.SearchHeroViewState
 
 val FRAGMENT_LIST_TAG = "fragment_service"
 
@@ -42,8 +33,6 @@ class ListHeroFragment: Fragment() {
             override fun handleOnBackPressed() {
                 activity?.supportFragmentManager?.popBackStack()
                 activity?.finish()
-                //val fragment = MainFragment.newInstance()
-                //(requireActivity() as MainActivity).removeFragment(fragment)
             }
 
         })

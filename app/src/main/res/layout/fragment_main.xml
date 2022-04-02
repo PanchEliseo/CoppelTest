@@ -10,27 +10,25 @@
             android:id="@+id/loader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:lottie_rawRes="@raw/animation"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:lottie_rawRes="@raw/animation" />
 
         <TextView
             android:id="@+id/tvInformation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/information"
             android:textSize="15sp"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewId"
@@ -38,34 +36,33 @@
             android:layout_height="wrap_content"
             android:text="@string/search_label"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/search_type"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewId"
             android:autofillHints=""
+            android:digits="0123456789qwertzuiopasdfghjklyxcvbnm "
+            android:hint="@string/search_type"
             android:inputType="text"
-            android:digits="0123456789qwertzuiopasdfghjklyxcvbnm "/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewId" />
 
         <Button
             android:id="@+id/buttonSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/search"
             android:layout_margin="10dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/search"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

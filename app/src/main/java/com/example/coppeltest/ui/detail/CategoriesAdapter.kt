@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.coppeltest.R
 import com.example.coppeltest.data.SuperHeroForId
 import com.example.coppeltest.databinding.EpoxyItemCategoriesBinding
-import com.example.coppeltest.databinding.EpoxyItemHeroDetailBinding
 
 class CategoriesAdapter(private val superHero: SuperHeroForId): RecyclerView.Adapter<CategoriesAdapter.HeroViewHolder>() {
 
