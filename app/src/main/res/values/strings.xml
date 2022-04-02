@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">CoppelTest</string>
+    <string name="name_hero">Nombre: %s</string>
+    <string name="category_powerstat">Super poderes</string>
+    <string name="intelligence">Inteligencia: %s</string>
+    <string name="strength">Fuerza: %s</string>
+    <string name="speed">Velocidad: %s</string>
+    <string name="durability">Resistencia: %s</string>
+    <string name="power">Poder: %s</string>
+    <string name="combat">Combate: %s</string>
+    <string name="category_biography">Biografía</string>
+    <string name="full_name">Nombre completo: %s</string>
+    <string name="alter_ego">Alter ego: %s</string>
+    <string name="aliases">Alias: %s</string>
+    <string name="place_of_birth">Lugar de nacimiento: %s</string>
+    <string name="first_appearance">Primera aparición: %s</string>
+    <string name="publisher">Editorial: %s</string>
+    <string name="alignment">Alineación: %s</string>
+    <string name="category_appearance">Apariencia</string>
+    <string name="gender">Genero: %s</string>
+    <string name="race">Raza: %s</string>
+    <string name="height">Altura: %s</string>
+    <string name="weight">Peso: %s</string>
+    <string name="eye_color">Color de ojos: %s</string>
+    <string name="hair_color">Color de pelo: %s</string>
+    <string name="category_work">Trabajo</string>
+    <string name="occupation">Ocupación: %s</string>
+    <string name="base">Base: %s</string>
+    <string name="category_connections">Conexiones</string>
+    <string name="group_affiliation">Grupo de afiliación: %s</string>
+    <string name="relatives">Parientes: %s</string>
+    <string name="search_label">Buscar Super Heroe o Villano por id o nombre</string>
+    <string name="search_type">Id o Nombre</string>
+    <string name="search">Buscar</string>
+    <string name="information">Para buscar más sobre heroes o villanos pulsa el menu</string>
+    <string name="lost_network">Verifica tu conección a internet</string>
+    <string name="empty_value">Introduce un valor</string>
+    <string name="fail">Ocurrio un error al descargar la información</string>
+    <string name="action">Lista de heroes/villanos</string>
+
+</resources>
