@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:autofillHints=""
-            android:digits="0123456789qwertzuiopasdfghjklyxcvbnm "
+            android:digits="0123456789qwertzuiopasdfghjklyxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM "
             android:hint="@string/search_type"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"

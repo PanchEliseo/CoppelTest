@@ -19,29 +19,29 @@ class CategoriesAdapter(private val superHero: SuperHeroForId): RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: HeroViewHolder, position: Int) {
-        holder.binding.tvIntelligence.text = context.getString(R.string.intelligence, superHero.powerstats!!.intelligence)
-        holder.binding.tvStrength.text = context.getString(R.string.strength, superHero.powerstats.strength)
-        holder.binding.tvSpeed.text = context.getString(R.string.speed, superHero.powerstats.speed)
-        holder.binding.tvDurability.text = context.getString(R.string.durability, superHero.powerstats.durability)
-        holder.binding.tvPower.text = context.getString(R.string.power, superHero.powerstats.power)
-        holder.binding.tvCombat.text = context.getString(R.string.combat, superHero.powerstats.combat)
-        holder.binding.tvFullName.text = context.getString(R.string.full_name, superHero.biography!!.fullName)
-        holder.binding.tvAlterEgo.text = context.getString(R.string.alter_ego, superHero.biography.alterEgos)
-        holder.binding.tvAlias.text = context.getString(R.string.aliases, superHero.biography.aliases)
-        holder.binding.tvPlaceOfBirth.text = context.getString(R.string.place_of_birth, superHero.biography.placeOfBirth)
-        holder.binding.tvFirstAppearance.text = context.getString(R.string.first_appearance, superHero.biography.firstAppearance)
-        holder.binding.tvPublisher.text = context.getString(R.string.publisher, superHero.biography.publisher)
-        holder.binding.tvAlignment.text = context.getString(R.string.alignment, superHero.biography.alignment)
-        holder.binding.tvGender.text = context.getString(R.string.gender, superHero.appearance!!.gender)
-        holder.binding.tvRace.text = context.getString(R.string.race, superHero.appearance.race)
-        holder.binding.tvHeight.text = context.getString(R.string.height, superHero.appearance.height)
-        holder.binding.tvWeight.text = context.getString(R.string.weight, superHero.appearance.weight)
-        holder.binding.tvEyeColor.text = context.getString(R.string.eye_color, superHero.appearance.eyeColor)
-        holder.binding.tvHairColor.text = context.getString(R.string.hair_color, superHero.appearance.hairColor)
-        holder.binding.tvOccupation.text = context.getString(R.string.occupation, superHero.work!!.occupation)
-        holder.binding.tvBase.text = context.getString(R.string.base, superHero.work.base)
-        holder.binding.tvGroupAffiliation.text = context.getString(R.string.group_affiliation, superHero.connections!!.groupAffiliation)
-        holder.binding.tvGroupAffiliation.text = context.getString(R.string.relatives, superHero.connections.relatives)
+        superHero.powerstats!!.intelligence.let { holder.binding.tvIntelligence.text = context.getString(R.string.intelligence, superHero.powerstats.intelligence) }
+        superHero.powerstats.strength.let { holder.binding.tvStrength.text = context.getString(R.string.strength, superHero.powerstats.strength) }
+        superHero.powerstats.speed.let { holder.binding.tvSpeed.text = context.getString(R.string.speed, superHero.powerstats.speed) }
+        superHero.powerstats.durability.let { holder.binding.tvDurability.text = context.getString(R.string.durability, superHero.powerstats.durability) }
+        superHero.powerstats.power.let { holder.binding.tvPower.text = context.getString(R.string.power, superHero.powerstats.power) }
+        superHero.powerstats.combat.let { holder.binding.tvCombat.text = context.getString(R.string.combat, superHero.powerstats.combat) }
+        superHero.biography!!.fullName.let { holder.binding.tvFullName.text = context.getString(R.string.full_name, superHero.biography.fullName) }
+        superHero.biography.alterEgos.let { holder.binding.tvAlterEgo.text = context.getString(R.string.alter_ego, superHero.biography.alterEgos) }
+        superHero.biography.aliases.let { holder.binding.tvAlias.text = context.getString(R.string.aliases, superHero.biography.aliases) }
+        superHero.biography.placeOfBirth.let { holder.binding.tvPlaceOfBirth.text = context.getString(R.string.place_of_birth, superHero.biography.placeOfBirth) }
+        superHero.biography.firstAppearance.let { holder.binding.tvFirstAppearance.text = context.getString(R.string.first_appearance, superHero.biography.firstAppearance) }
+        superHero.biography.publisher.let { holder.binding.tvPublisher.text = context.getString(R.string.publisher, superHero.biography.publisher) }
+        superHero.biography.alignment.let { holder.binding.tvAlignment.text = context.getString(R.string.alignment, superHero.biography.alignment) }
+        superHero.appearance!!.gender.let { holder.binding.tvGender.text = context.getString(R.string.gender, superHero.appearance.gender) }
+        superHero.appearance.race.let { holder.binding.tvRace.text = context.getString(R.string.race, superHero.appearance.race) }
+        superHero.appearance.height.let { holder.binding.tvHeight.text = context.getString(R.string.height, superHero.appearance.height) }
+        superHero.appearance.weight.let { holder.binding.tvWeight.text = context.getString(R.string.weight, superHero.appearance.weight) }
+        superHero.appearance.eyeColor.let { holder.binding.tvEyeColor.text = context.getString(R.string.eye_color, superHero.appearance.eyeColor) }
+        superHero.appearance.hairColor.let { holder.binding.tvHairColor.text = context.getString(R.string.hair_color, superHero.appearance.hairColor) }
+        superHero.work!!.occupation.let { holder.binding.tvOccupation.text = context.getString(R.string.occupation, superHero.work.occupation) }
+        superHero.work.base.let { holder.binding.tvBase.text = context.getString(R.string.base, superHero.work.base) }
+        superHero.connections!!.groupAffiliation.let { holder.binding.tvGroupAffiliation.text = context.getString(R.string.group_affiliation, superHero.connections.groupAffiliation) }
+        superHero.connections.relatives.let { holder.binding.tvGroupAffiliation.text = context.getString(R.string.relatives, superHero.connections.relatives) }
     }
 
     override fun getItemCount(): Int {
