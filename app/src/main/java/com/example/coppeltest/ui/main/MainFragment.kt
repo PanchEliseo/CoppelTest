@@ -65,7 +65,7 @@ class MainFragment: Fragment() {
             is SearchHeroViewState.HeroLoaded -> {
                 binding.loader.visibility = View.GONE
                 (requireActivity() as MainActivity).onRequestChangeFragment(ListHeroFragment.newInstance(state.hero),
-                    false,
+                    true,
                     FRAGMENT_LIST_TAG)
             }
             is SearchHeroViewState.Loading -> {

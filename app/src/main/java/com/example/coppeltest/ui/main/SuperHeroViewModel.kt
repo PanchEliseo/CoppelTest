@@ -5,9 +5,13 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.widget.EditText
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bumptech.glide.Glide
+import com.example.coppeltest.R
 import com.example.coppeltest.data.SuperHeroForId
 import com.example.coppeltest.repository.SuperHeroRepository
 import kotlinx.coroutines.launch

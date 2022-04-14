@@ -2,10 +2,22 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.coppeltest.data.SuperHeroForId" />
+
+    </data>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_gradient">
+        android:background="@drawable/background_gradient"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        >
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -16,10 +28,7 @@
             app:cardCornerRadius="10dp"
             app:cardElevation="1dp"
             app:cardUseCompatPadding="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
             <LinearLayout
                 android:id="@+id/expanded_view"
@@ -62,6 +71,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
                         android:textAlignment="center"
+                        android:text="@{@string/intelligence(item.powerstats.intelligence)}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,6 +85,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
                         android:textAlignment="center"
+                        android:text="@{@string/strength(item.powerstats.strength)}"
                         app:layout_constraintStart_toEndOf="@id/tvIntelligence"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -87,6 +98,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
                         android:textAlignment="center"
+                        android:text="@{@string/speed(item.powerstats.speed)}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +125,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
                         android:textAlignment="center"
+                        android:text="@{@string/durability(item.powerstats.durability)}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -125,6 +138,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
                         android:textAlignment="center"
+                        android:text="@{@string/power(item.powerstats.power)}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvDurability"
@@ -137,6 +151,7 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
                         android:textAlignment="center"
+                        android:text="@{@string/combat(item.powerstats.combat)}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -151,90 +166,63 @@
                     android:layout_margin="5dp"
                     android:text="@string/category_biography"
                     android:textSize="25sp"
-                    android:gravity="center"
-                    app:layout_constrainedWidth="true"
-                    app:layout_constraintTop_toBottomOf="@id/container2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvFullName"/>
+                    android:gravity="center" />
 
                 <TextView
                     android:id="@+id/tvFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/categoryBiography"
-                    app:layout_constraintBottom_toTopOf="@id/tvAlterEgo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    />
+                    android:text="@{@string/full_name(item.biography.fullName)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvAlterEgo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvFullName"
-                    app:layout_constraintBottom_toTopOf="@id/tvAlias"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/alter_ego(item.biography.alterEgos)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvAlias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvAlterEgo"
-                    app:layout_constraintBottom_toTopOf="@id/tvPlaceOfBirth"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/aliases(item.biography.aliases)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvPlaceOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintTop_toBottomOf="@id/tvAlias"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvFirstAppearance"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/place_of_birth(item.biography.placeOfBirth)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvFirstAppearance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintTop_toBottomOf="@id/tvPlaceOfBirth"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvPublisher"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/first_appearance(item.biography.firstAppearance)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvPublisher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvFirstAppearance"
-                    app:layout_constraintBottom_toTopOf="@id/tvAlignment"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/publisher(item.biography.publisher)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvAlignment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintTop_toBottomOf="@id/tvPublisher"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/categoryAppearance"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/alignment(item.biography.alignment)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/categoryAppearance"
@@ -245,10 +233,6 @@
                     android:textSize="25sp"
                     android:gravity="center"
                     app:layout_constrainedWidth="true"
-                    app:layout_constraintTop_toBottomOf="@id/categoryAppearance"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/container3"
                     />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -267,6 +251,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
+                        android:text="@{@string/gender(item.appearance.gender)}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -278,6 +263,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
+                        android:text="@{@string/race(item.appearance.race)}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tvGender"
                         app:layout_constraintEnd_toStartOf="@id/tvHeight"
@@ -289,6 +275,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
+                        android:text="@{@string/height(item.appearance.height)}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -312,6 +299,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
+                        android:text="@{@string/weight(item.appearance.weight)}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -323,6 +311,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:textColor="@color/black"
+                        android:text="@{@string/eye_color(item.appearance.eyeColor)}"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -335,11 +324,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintTop_toBottomOf="@id/container4"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/categoryWork"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/hair_color(item.appearance.hairColor)}"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/categoryWork"
@@ -348,23 +334,15 @@
                     android:layout_margin="5dp"
                     android:text="@string/category_work"
                     android:textSize="25sp"
-                    android:gravity="center"
-                    app:layout_constrainedWidth="true"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvHairColor"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvOccupation"/>
+                    android:gravity="center" />
 
                 <TextView
                     android:id="@+id/tvOccupation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:text="@{@string/occupation(item.work.occupation)}"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/categoryWork"
-                    app:layout_constraintBottom_toTopOf="@id/tvBase"
-                    app:layout_constraintEnd_toEndOf="parent"
                     />
 
                 <TextView
@@ -372,11 +350,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvOccupation"
-                    app:layout_constraintBottom_toTopOf="@id/categoryConnections"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/base(item.work.base)}"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/categoryConnections"
@@ -385,39 +360,28 @@
                     android:layout_margin="5dp"
                     android:text="@string/category_connections"
                     android:textSize="25sp"
-                    android:gravity="center"
-                    app:layout_constrainedWidth="true"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvBase"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvGroupAffiliation"/>
+                    android:gravity="center"/>
 
                 <TextView
                     android:id="@+id/tvGroupAffiliation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/tvRelatives"
-                    app:layout_constraintTop_toBottomOf="@id/categoryConnections"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@{@string/group_affiliation(item.connections.groupAffiliation)}"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tvRelatives"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvGroupAffiliation"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    android:text="@{@string/relatives(item.connections.relatives)}"
+                    android:textColor="@color/black"/>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </layout>

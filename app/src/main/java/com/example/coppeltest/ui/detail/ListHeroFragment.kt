@@ -6,8 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.coppeltest.FRAGMENT_TAG
+import com.example.coppeltest.MainActivity
 import com.example.coppeltest.data.SuperHeroForId
 import com.example.coppeltest.databinding.FragmentListHeroBinding
+import com.example.coppeltest.ui.main.MainFragment
 
 val FRAGMENT_LIST_TAG = "fragment_service"
 
@@ -15,11 +20,13 @@ class ListHeroFragment: Fragment() {
 
     private lateinit var binding: FragmentListHeroBinding
     private lateinit var superHero: ArrayList<SuperHeroForId>
+    //private lateinit var fragment: ListHeroFragment
 
     companion object {
         const val HERO = "request_hero"
+        private lateinit var fragment: ListHeroFragment
         fun newInstance(value: ArrayList<SuperHeroForId>): ListHeroFragment {
-            val fragment = ListHeroFragment()
+            fragment = ListHeroFragment()
             val args = Bundle()
             args.putParcelableArrayList(HERO, value)
             fragment.arguments = args
@@ -31,8 +38,10 @@ class ListHeroFragment: Fragment() {
         super.onCreate(savedInstanceState)
         activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                activity?.supportFragmentManager?.popBackStack()
-                activity?.finish()
+                val fragment = MainFragment.newInstance()
+                (requireActivity() as MainActivity).onRequestChangeFragment(fragment, true, FRAGMENT_TAG)
+                activity?.supportFragmentManager?.popBackStackImmediate()
+                //activity?.finish()
             }
 
         })
